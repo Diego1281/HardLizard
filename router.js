@@ -1,0 +1,32 @@
+let index = require ('./src/index')
+let router = function (url,res) {
+    switch (url) {
+            case '/':
+            index.homePage (res) ;
+
+            break 
+            case '/enCartelera':
+            index.enCartelera (res);
+            break
+            case '/contacto':
+                index.contacto (res);
+                break
+             case '/masVotadas':
+                index.masVotadas (res);
+             break
+            case '/preguntasFrecuentes':
+                 index.preguntasFrecuentes (res);
+                 break
+            case '/sucursales':
+                index.sucursales (res);
+                break
+            default:
+                res.end ('404 pagina no encontrada');
+                break
+
+            
+    }
+
+
+}
+module.exports = router
